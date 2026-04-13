@@ -1,0 +1,12 @@
+# Terraform Ignored Files
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+.terraform.lock.hcl
+
+# Oracle / Python Ignored Files
+wallet/
+*.zip
+__pycache__/
