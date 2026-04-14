@@ -75,7 +75,7 @@ def run_data_engine():
             fake.date_time_this_year()
         ))
 
-    # 3. High-Performance Batch Insert (Otonom İşlem)
+
     start_time = time.time()
     print("⚡ Veriler OCI Autonomous Database'e fırlatılıyor...")
 
