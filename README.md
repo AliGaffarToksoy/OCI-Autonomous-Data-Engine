@@ -57,13 +57,19 @@ This platform enforces:
 ```mermaid
 flowchart LR
 
-A[🧪 Python Data Generator] --> B[📦 Batch Processor<br/>executemany()]
-B --> C[🔐 mTLS Wallet<br/>Secure Channel]
-C --> D[(🗄️ Oracle ATP)]
-D --> E[📊 High-Performance Storage]
+A["🧪 Python Data Generator<br/>Synthetic Data Production"]
+B["📦 Batch Processing Engine<br/>Optimized executemany()"]
+C["🔐 Secure Connectivity Layer<br/>Oracle Wallet (mTLS)"]
+D[("🗄️ Oracle ATP<br/>Autonomous Transaction Processing")]
+E["📊 High-Performance Storage<br/>Indexed & Persisted Data"]
 
+A -->|Generate Structured Records| B
+B -->|Bulk Insert (Minimized Network Calls)| C
+C -->|Encrypted Transmission (mTLS)| D
+D -->|Auto-Optimized Processing| E
+```
 ---
-🧠 Architecture Breakdown
+### 🧠 Architecture Breakdown
 1️⃣ Python Data Generator
 Produces synthetic structured data
 Configurable batch size & record count
@@ -82,7 +88,7 @@ Provisions ATP
 Downloads wallet
 Ensures reproducible deployments
 ---
-🧰 Technology Stack
+### 🧰 Technology Stack
 Layer	Technology	Purpose
 Cloud	Oracle Cloud Infrastructure	Managed cloud platform
 Database	Oracle ATP	High-performance transactional DB
@@ -91,7 +97,8 @@ Driver	python-oracledb	Optimized DB connectivity
 IaC	Terraform	Automated provisioning
 Security	Oracle Wallet (mTLS)	Encrypted communication
 ---
-📂 Repository Structure
+### 📂 Repository Structure
+```
 oci-data-engine/
 ├── infrastructure/
 │   ├── provider.tf         # OCI provider configuration
@@ -105,9 +112,9 @@ oci-data-engine/
 │   └── .env.example        # Environment variables template
 │
 └── README.md
-
+```
 ---
-✨ Key Features
+### ✨ Key Features
 ⚡ 100× faster ingestion with batch processing
 🔐 mTLS-secured Oracle Wallet communication
 🧱 Infrastructure as Code with Terraform
@@ -115,12 +122,29 @@ oci-data-engine/
 ☁️ Cloud-native architecture
 🧵 Scalable ingestion pipeline
 ---
-📊 Performance Comparison
-Method	Records	Network Calls	Time	Efficiency
-Row-by-Row	10,000	10,000	~120s	❌ Low
-Batch Processing	10,000	~10	~1.5s	✅ High
+### 📊 Performance Comparison
+
+| 🚀 Ingestion Strategy | 📦 Records | 🌐 Network Calls | ⏱️ Execution Time | ⚡ Throughput Efficiency | 🧠 Engineering Evaluation |
+|----------------------|----------|-----------------|------------------|-------------------------|--------------------------|
+| **Row-by-Row Insert** | 10,000 | 10,000 | ~120 seconds | ❌ Very Low | Inefficient, high latency, not scalable |
+| **Batch Processing (executemany)** | 10,000 | ~10 | ~1.5 seconds | ✅ Extremely High | Optimized, scalable, production-ready |
+
 ---
-🚀 Deployment Guide
+
+### 🔍 Key Insights
+
+- **Network Overhead Reduction:**  
+  Batch processing reduces network round-trips by **~99.9%**
+
+- **Performance Gain:**  
+  Achieves **up to 100× faster ingestion**
+
+- **Scalability:**  
+  Suitable for **high-volume, distributed systems**
+
+- **Best Practice:**  
+  Batch processing is the **industry-standard approach** for enterprise data pipelines
+### 🚀 Deployment Guide
 ⚙️ Prerequisites
 Oracle Cloud account
 Terraform v1.0+
@@ -152,7 +176,7 @@ Record count
 python data_generator.py
 
 ---
-☸️ Optional: Kubernetes Deployment (Advanced)
+### ☸️ Optional: Kubernetes Deployment (Advanced)
 For enterprise scaling:
 Containerize ingestion engine
 Mount wallet as Kubernetes Secret
@@ -161,7 +185,7 @@ Enable autoscaling via HPA
 Integrate with OCI Logging & Monitoring
 This enables elastic, production-grade ingestion pipelines.
 ---
-📡 Usage Example
+### 📡 Usage Example
 cursor.executemany(
     "INSERT INTO sensor_data (id, value, ts) VALUES (:1, :2, :3)",
     batch_records
@@ -169,7 +193,7 @@ cursor.executemany(
 connection.commit()
 
 ---
-🖼️ Screenshots
+### 🖼️ Screenshots
 Replace placeholders with real images when available.
 Architecture Diagram
 [Image Placeholder]
@@ -178,12 +202,12 @@ Terraform Deployment Output
 Batch Ingestion Logs
 [Image Placeholder]
 ---
-👨‍💻 Developer
+## 👨‍💻 Developer
 Ali Gaffar Toksoy
 Cloud & DevOps Engineer
 “Good engineers write code. Great engineers optimize systems.”
 ---
-⭐ Final Note
+## ⭐ Final Note
 This project demonstrates how modern data ingestion should be engineered:
 ✔ High-performance
 ✔ Secure
