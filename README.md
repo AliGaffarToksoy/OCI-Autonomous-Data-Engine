@@ -14,7 +14,6 @@
 </div>
 
 ---
-
 ## 🌍 Overview
 
 Modern cloud systems rarely fail due to lack of compute — they fail due to **inefficient data ingestion**.
